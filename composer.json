@@ -5,7 +5,9 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "5.0.*"
+        "koraktor/steam-condenser": "dev-master",
+		"laravel/framework": "5.0.*",
+        "planetteamspeak/ts3-php-framework": "1.1.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

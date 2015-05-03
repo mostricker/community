@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Hardwire
+        psr4_prefix: Hardwire
+        src_path: app

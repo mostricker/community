@@ -6,6 +6,7 @@
 	"type": "project",
 	"require": {
         "koraktor/steam-condenser": "dev-master",
+        "iignatov/lightopenid": "dev-master",
 		"laravel/framework": "5.0.*",
         "planetteamspeak/ts3-php-framework": "1.1.*"
 	},

@@ -1,17 +1,13 @@
 <?php namespace Hardwire\Http\Controllers;
 
-class HomeController extends Controller {
+use Hardwire\Models\Steam;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use LightOpenID;
+use TeamSpeak3;
 
-	/*
-	|--------------------------------------------------------------------------
-	| Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders your application's "dashboard" for users that
-	| are authenticated. Of course, you are free to change or remove the
-	| controller as you wish. It is just here to get your app started!
-	|
-	*/
+class HomeController extends Controller {
 
 	/**
 	 * Create a new controller instance.
@@ -20,7 +16,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('guest');
+
 	}
 
 	/**
@@ -30,7 +26,49 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('master');
+        $ts3_VirtualServer = TeamSpeak3::factory(config('services.teamspeak.connect'));
+        $arr_ClientList = $ts3_VirtualServer->clientList();
+
+        foreach ($arr_ClientList as $client) {
+            $teamspeakIds[] = $client['client_database_id'];
+        }
+
+        $members = \Hardwire\Models\User::with(['steam', 'teamspeak'])->get();
+
+		return view('master', compact('members', 'teamspeakIds'));
 	}
+
+    public function login(Request $request, Redirector $redirect, Guard $auth)
+    {
+        $openId = new LightOpenID(url(''));
+
+        if ($openId->validate()) {
+            $url = $openId->identity;
+            $parts = explode('/', $url);
+            $id = $parts[count($parts) - 1];
+
+            $steam = Steam::where('steam_id', $id)->with('user')->first();
+
+            if ($steam === null) {
+                return 'Sorry, you must be an authorized Hardwire member to login!';
+            }
+
+            $user = $steam->user;
+            $auth->login($user);
+
+            return $redirect->action('HomeController@index');
+        } else {
+            $openId->returnUrl = url($request->fullUrl());
+            $openId->identity = 'https://steamcommunity.com/openid';
+
+            return $redirect->to($openId->authUrl());
+        }
+    }
+
+    public function logout(Redirector $redirect, Guard $auth)
+    {
+        $auth->logout();
+        return $redirect->action('HomeController@index');
+    }
 
 }

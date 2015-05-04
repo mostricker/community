@@ -2,36 +2,13 @@
 
 return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Third Party Services
-	|--------------------------------------------------------------------------
-	|
-	| This file is for storing the credentials for third party services such
-	| as Stripe, Mailgun, Mandrill, and others. This file provides a sane
-	| default location for this type of information, allowing packages
-	| to have a conventional place to find your various credentials.
-	|
-	*/
+    'steam' => [
+        'group' => '103582791433316798',
+        'api' => env('STEAM_API', '1A0FF0BDEADBEEFBC00C06F0CFAB123A'),
+    ],
 
-	'mailgun' => [
-		'domain' => '',
-		'secret' => '',
-	],
-
-	'mandrill' => [
-		'secret' => '',
-	],
-
-	'ses' => [
-		'key' => '',
-		'secret' => '',
-		'region' => 'us-east-1',
-	],
-
-	'stripe' => [
-		'model'  => 'App\User',
-		'secret' => '',
-	],
+    'teamspeak' => [
+        'connect' => env('TEAMSPEAK_CONNECT', 'serverquery://user:pass@ts.hardwiregaming.com:9100/?server_port=9258'),
+    ]
 
 ];

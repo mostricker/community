@@ -30,6 +30,7 @@ class HomeController extends Controller {
         $arr_ClientList = $ts3_VirtualServer->clientList();
 
         foreach ($arr_ClientList as $client) {
+            if ($client['client_type'] !== 1)
             $teamspeakIds[] = $client['client_database_id'];
         }
 

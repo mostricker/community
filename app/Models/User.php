@@ -22,4 +22,9 @@ class User extends Model implements AuthenticatableContract {
         return $this->hasOne('Hardwire\Models\Teamspeak');
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany('Hardwire\Models\Role');
+    }
+
 }

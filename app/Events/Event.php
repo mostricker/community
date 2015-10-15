@@ -1,7 +1,8 @@
-<?php namespace Hardwire\Events;
+<?php
 
-abstract class Event {
+namespace Hardwire\Events;
 
-	//
-
+abstract class Event
+{
+    //
 }

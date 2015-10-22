@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b672904d8ae3bf9b862d786a2b35ddd",
-    "content-hash": "5bd58fd976f1ee3e9611bc37c006ec46",
+    "hash": "120e2612b15c949ddb13167a57e76e5f",
+    "content-hash": "106806cbc238d80feb588b69319967b3",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -218,6 +218,53 @@
             "time": "2014-12-20 21:24:13"
         },
         {
+            "name": "iignatov/lightopenid",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WillSkates/LightOpenID.git",
+                "reference": "15264c31aef8bbe7ea18f12b6da4ccdb9927f9fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WillSkates/LightOpenID/zipball/15264c31aef8bbe7ea18f12b6da4ccdb9927f9fa",
+                "reference": "15264c31aef8bbe7ea18f12b6da4ccdb9927f9fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "openid.php",
+                    "provider/provider.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ignat Ignatov",
+                    "homepage": "https://github.com/iignatov/LightOpenID"
+                },
+                {
+                    "name": "Mewp",
+                    "homepage": "https://code.google.com/p/lightopenid/"
+                }
+            ],
+            "description": "Lightweight PHP5 library for easy OpenID authentication.",
+            "homepage": "https://github.com/iignatov/LightOpenID",
+            "keywords": [
+                "Authentication",
+                "OpenId",
+                "security"
+            ],
+            "time": "2014-01-27 06:01:05"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -361,6 +408,59 @@
                 "tokenizer"
             ],
             "time": "2015-03-11 20:06:43"
+        },
+        {
+            "name": "koraktor/steam-condenser",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koraktor/steam-condenser-php.git",
+                "reference": "cf66c8b801b6d53297b8cfd0209ca45f1b9f956e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/koraktor/steam-condenser-php/zipball/cf66c8b801b6d53297b8cfd0209ca45f1b9f956e",
+                "reference": "cf66c8b801b6d53297b8cfd0209ca45f1b9f956e",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "~1.10",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "~2.6.1",
+                "phpunit/phpunit": "~4.1.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/SteamCondenser.php"
+                ],
+                "psr-4": {
+                    "SteamCondenser\\": "lib/SteamCondenser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Staudt",
+                    "email": "koraktor@gmail.com"
+                }
+            ],
+            "description": "The Steam Condenser is a library for querying the Steam Community, Source and GoldSrc game servers",
+            "homepage": "http://koraktor.de/steam-condenser",
+            "keywords": [
+                "community",
+                "goldsrc",
+                "query",
+                "source",
+                "steam",
+                "webapi"
+            ],
+            "time": "2015-08-21 19:21:40"
         },
         {
             "name": "laravel/framework",
@@ -790,20 +890,23 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "f667aa2000a192adfa53332335a2ae0c1cb9ea6e"
+                "reference": "9a0ce69360aa22413a96f2bf93f61235e2c18486"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/f667aa2000a192adfa53332335a2ae0c1cb9ea6e",
-                "reference": "f667aa2000a192adfa53332335a2ae0c1cb9ea6e",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/9a0ce69360aa22413a96f2bf93f61235e2c18486",
+                "reference": "9a0ce69360aa22413a96f2bf93f61235e2c18486",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.0"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
             },
             "type": "library",
             "autoload": {
@@ -828,7 +931,46 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-10-08 12:57:25"
+            "time": "2015-10-16 03:43:13"
+        },
+        {
+            "name": "planetteamspeak/ts3-php-framework",
+            "version": "1.1.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mdoelker/ts3-php-framework.git",
+                "reference": "df1ca20abfd1fc6a9c01dd0fc91fb32132518706"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mdoelker/ts3-php-framework/zipball/df1ca20abfd1fc6a9c01dd0fc91fb32132518706",
+                "reference": "df1ca20abfd1fc6a9c01dd0fc91fb32132518706",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "libraries/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Sven 'ScP' Paulsen"
+                }
+            ],
+            "description": "Initially released in January 2010, the TS3 PHP Framework is a powerful, open source, object-oriented framework implemented in PHP 5 and licensed under the GNU General Public License. It's based on simplicity and a rigorously tested agile codebase. Extend the functionality of your servers with scripts or create powerful web applications to manage all features of your TeamSpeak 3 Server instances.",
+            "homepage": "http://addons.teamspeak.com/directory/tools/integration/TeamSpeak-3-PHP-Framework.html",
+            "keywords": [
+                "teamspeak"
+            ],
+            "time": "2013-10-17 10:10:03"
         },
         {
             "name": "psr/log",
@@ -2966,7 +3108,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "koraktor/steam-condenser": 20,
+        "iignatov/lightopenid": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

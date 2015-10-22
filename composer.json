@@ -5,6 +5,8 @@
     "license": "MIT",
     "type": "project",
     "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*",
         "koraktor/steam-condenser": "dev-master",
         "iignatov/lightopenid": "dev-master",
         "planetteamspeak/ts3-php-framework": "1.1.*"
@@ -16,10 +18,6 @@
         "psr-4": {
             "Hardwire\\": "app/"
         }
-    },
-    "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

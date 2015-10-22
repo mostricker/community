@@ -11,7 +11,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-    
+        Commands\TakeARideCommand::class,
     ];
 
     /**

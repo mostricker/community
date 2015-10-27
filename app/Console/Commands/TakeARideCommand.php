@@ -19,7 +19,7 @@ class TakeARideCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Command description.';
+    protected $description = 'This lets you take another user for a ride!';
 
     /**
      * Create a new command instance.
